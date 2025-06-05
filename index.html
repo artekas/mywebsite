@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aretas Petronis Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    :root {
+  --bg: #e0e0e0;
+  --text: #333;
+  --accent: #f5f5f5;
+  --nav: #d6d6d6;
+  --card: #ffffff;
+  --alt: #f9f9f9;
+  --highlight: #6e44ff;
+  --bg-1: #e0e0e0;  /* hero */
+  --bg-2: #f5f5f5;  /* tools */
+  --bg-3: #e0e0e0;  /* projects */
+  --bg-4: #f5f5f5;  /* contact */
+}
+    body.dark-mode {
+  --bg: #1c1c1c;
+  --text: #eaeaea;
+  --accent: #2a2a2a;
+  --nav: #2f2f2f;
+  --card: #2a2a2a;
+  --alt: #1a1a1a;
+  --bg-1: #121212;  /* hero */
+  --bg-2: #1e1e1e;  /* tools */
+  --bg-3: #121212;  /* projects */
+  --bg-4: #1e1e1e;  /* contact */
+}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: color 0.3s;
+    }
+    header.top-banner-icons {
+      background: var(--highlight);
+      height: 48px;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: none;
+    }
+    header.top-banner-nav {
+      background: var(--nav);
+      padding: 14px 30px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-weight: 500;
+      position: fixed;
+      top: 48px;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      border-top: none;
+      border-bottom: 1px solid #bbb;
+    }
+    /* Top banner (social icons) */
+    .top-banner-icons a,
+    .top-banner-icons button {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+/* Second nav (Home / About Me / Projects / Contact) */
+    .top-banner-nav a {
+      color: #444;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .top-banner-nav a {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .top-banner-nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: var(--text);
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+    .top-banner-nav a:hover {
+      color: #5838d7; 
+    }
+    .top-banner-nav a:hover::after {
+      width: 100%;
+    }
+    .top-banner-nav a:active,
+    .top-banner-nav a:focus {
+     color: #5838d7;
+     outline: none;
+    }
+    .top-banner-nav a.active {
+     color: #5838d7;
+     font-weight: 600;
+     position: relative;
+    }
+    .top-banner-nav a.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #5838d7;
+    left: 0;
+    bottom: -4px;
+   }
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+    }
+    .hero h1, .hero p, .section-title {
+      transition: opacity 0.25s ease-out;
+      will-change: opacity;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 12px;
+      color: #777;
+    }
+    section#projects {
+      position: relative;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card p {
+      font-weight: 600;
+      font-size: 16px;
+      padding: 12px;
+    }
+    .project-tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .project-tag {
+      background-color: var(--highlight);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--accent);
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 24px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-buttons a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      background: var(--highlight);
+      width: 140px;
+      padding: 12px 0;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: background 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+      text-align: center;
+    }
+    .hero-buttons a:hover {
+      background: #5838d7;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .tools-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tool-card {
+      width: 160px;
+      height: 180px;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-weight: 500;
+      color: var(--text);
+      transition: transform 0.2s ease;
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .tool-card i {
+      color: var(--text);
+    }
+    .violet-button {
+      width: 100%;
+      background: var(--highlight);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .violet-button:hover {
+      background: #5838d7;
+    }
+    .section-bg {
+     padding: 100px 20px;
+     }
+     .section-hero {
+      background-color: var(--bg-1);
+    }
+     .section-tools {
+      background-color: var(--bg-2);
+     }
+     .section-projects {
+  background-color: var(--bg-3);
+}
+.section-contact {
+  background-color: var(--bg-4);
+}
+  </style>
+</head>
+<body>
+  <header class="top-banner-icons">
+    <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
+    <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#contact"><i class="fas fa-envelope"></i></a>
+    <button onclick="toggleTheme()"><i id="themeIcon" class="far fa-moon"></i></button>
+  </header>
+  <header class="top-banner-nav">
+    <a href="#top" id="home-link">Home</a>
+    <a href="about.html" id="about-link">About Me</a>
+    <a href="#projects" id="projects-link">Projects</a>
+    <a href="#contact" id="contact-link">Contact</a>
+  </header>
+  <div class="hero" id="top" style="background-color: var(--bg);">
+    <h1 class="hero-heading">Hello!</h1>
+    <h1 class="hero-heading">I'm Aretas Petronis</h1>
+    <p id="mainSubtitle">LSE-certified to turn "Huh?" into "Hell yes!"</p>
+    <div class="hero-buttons">
+    <a href="#" onclick="scrollToTools(event)">Tools</a>
+    <a href="#projects">Projects</a>
+    <a href="#">Resumé</a>
+  </div>
+  </div>
+  <section id="tools" class="section-bg section-tools">
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2 class="section-title">My Tools</h2>
+    <p style="font-size: 16px; color: #666; margin-bottom: 50px;">
+      Tools I use daily to clean data, uncover insights, and build impactful stories.
+    </p>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <i class="fas fa-wave-square fa-2x"></i>
+        <span>Python</span>
+      </div>
+      <div class="tool-card">
+        <i class="fas fa-broadcast-tower fa-2x"></i>
+        <span>SQL</span>
+      </div>
+      <div class="tool-card">
+        <i class="fas fa-table fa-2x"></i>
+        <span>Excel</span>
+      </div>
+      <div class="tool-card">
+        <i class="fas fa-code fa-2x"></i>
+        <span>R</span>
+      </div>
+      <div class="tool-card">
+        <i class="fas fa-chart-pie fa-2x"></i>
+        <span>Tableau</span>
+      </div>
+    </div>
+  </div>
+</section>
+  <section id="projects" class="section-bg section-projects" style="width: 100%; padding: 120px 0 80px;">
+  <div style="max-width: 1200px; margin: auto; padding: 0 40px;">
+    <h2 class="section-title" id="projectsTitle">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+     <img src="project_1.png" alt="GAEA AI">
+     <div class="project-tags">
+     <span class="project-tag">Python & Tableau</span>
+     </div>
+     <p>GAEA AI: Ice Demand Forecasting</p>
+     </div>
+      <div class="project-card">
+     <img src="project_2.png" alt="NHS UK">
+     <div class="project-tags">
+     <span class="project-tag">Python & Tableau</span>
+     </div>
+     <p>NHS UK: Missed Appointments</p>
+     </div>
+      <div class="project-card">
+      <img src="project_3.png" alt="Turtle Games">
+      <div class="project-tags">
+      <span class="project-tag">Python & Tableau</span>
+      </div>
+      <p>Turtle Games: Customer Segmentation</p>
+      </div>
+      <div class="project-card">
+      <img src="project_4.png" alt="2Market">
+      <div class="project-tags">
+      <span class="project-tag">Python & Tableau</span>
+      </div>
+      <p>2Market: Retail Expansion</p>
+      </div>
+    </div>
+  </section>
+  </div>
+</section>
+  <section id="contact" class="section-bg section-contact" style="padding: 60px 20px 100px;">
+     <h2 class="section-title" style="margin-top: 50px;">Get in touch</h2>
+  <p style="text-align: center; margin-bottom: 40px; font-size: 17px;">
+    Do you have a project I can help you with? Let’s talk about it.
+  </p>
+  <form action="mailto:aretaspetronis@yahoo.com" method="POST" enctype="text/plain"
+        style="max-width: 550px; margin: auto; background: var(--card); padding: 45px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); color: var(--text);">
+    <label style="display: block; margin-bottom: 20px;">
+      <span style="font-weight: 500;">Name <span style="color: var(--text);">*</span></span>
+      <input type="text" name="name" required
+             style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; background: var(--bg); color: var(--text);" />
+    </label>
+    <label style="display: block; margin-bottom: 20px;">
+      <span style="font-weight: 500;">Email Address <span style="color: var(--text);">*</span></span>
+      <input type="email" name="email" required
+             style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; background: var(--bg); color: var(--text);" />
+    </label>
+    <label style="display: block; margin-bottom: 30px;">
+      <span style="font-weight: 500;">Message <span style="color: var(--text);">*</span></span>
+      <textarea name="message" rows="5" required
+                style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; background: var(--bg); color: var(--text);"></textarea>
+    </label>
+    <button type="submit" class="violet-button">SEND</button>
+  </form>
+</section>
+  <footer>
+    © 2025 Aretas Petronis. Built with ♥️ using Netlify.
+  </footer>
+  <script>
+  function updateIcon() {
+    const icon = document.getElementById("themeIcon");
+    if (document.body.classList.contains("dark-mode")) {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    updateIcon();
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("darkMode") === "true";
+    document.body.classList.toggle("dark-mode", saved);
+    updateIcon();
+  });
+</script>
+<script>
+  function scrollToTools(event) {
+  if (event) event.preventDefault();
+  const section = document.getElementById('tools');
+  const elementTop = section.getBoundingClientRect().top + window.scrollY;
+  const elementHeight = section.offsetHeight;
+  const viewportHeight = window.innerHeight;
+  const scrollTo = elementTop - ((viewportHeight - elementHeight) / 2);
+  window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+}
+</script>
+</script>
+<script>
+  const navLinks = document.querySelectorAll('.top-banner-nav a');
+  const currentUrl = window.location.href;
+
+  navLinks.forEach(link => {
+    if (currentUrl.includes(link.getAttribute('href'))) {
+      link.classList.add('active');
+    }
+
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

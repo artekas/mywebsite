@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2Market Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f2f2f2;
+      color: #444;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: #fafafa;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    .top-bar h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .iframe-container {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    iframe {
+      width: 100%;
+      min-height: 800px;
+      aspect-ratio: 16 / 9;
+      border: none;
+      display: block;
+    }
+    .back-btn {
+      background: #444;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: #333;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        aspect-ratio: 4 / 3;
+        min-height: 600px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <h2 class="section-title" style="margin: 0;">2Market Dashboard</h2>
+    <a href="dashboards.html" class="back-btn">← Back to Dashboards</a>
+  </div>
+  <div class="iframe-container">
+    <iframe src="https://public.tableau.com/views/2MarketRetailExpansionAnalysis/MainDashboard?:showVizHome=no&:embed=true"></iframe>
+  </div>
+</body>
+</html>

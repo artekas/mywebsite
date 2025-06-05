@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Aretas Petronis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #e0e0e0;
+      --text: #2b2b2b;
+      --accent: #f7f7f7;
+      --nav: #d3d3d3;
+      --card: #ffffff;
+      --alt: #f5f5f5;
+      --highlight: #6e44ff;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #ffffff;
+      --accent: #1e1e1e;
+      --nav: #1a1a1a;
+      --card: #1f1f1f;
+      --alt: #141414;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header.top-banner-icons {
+      background: var(--highlight);
+      height: 48px;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: none;
+    }
+
+    .top-banner-icons a,
+    .top-banner-icons button {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .top-banner-icons button i {
+      font-size: 16px;
+      color: white;
+    }
+
+    .top-banner-nav a {
+      color: #444;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .top-banner-nav a {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .top-banner-nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: var(--text);
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+    .top-banner-nav a:hover {
+      color: #5838d7;
+    }
+    .top-banner-nav a:hover::after {
+      width: 100%;
+    }
+    header.top-banner-nav {
+      background: var(--nav);
+      padding: 14px 30px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-weight: 500;
+      position: fixed;
+      top: 48px;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      border-top: none;
+      border-bottom: 1px solid #bbb;
+    }
+    .top-banner-nav a.active {
+      color: #5838d7;
+      font-weight: 600;
+      position: relative;
+    }
+    .top-banner-nav a.active::after {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     background-color: #5838d7;
+     left: 0;
+     bottom: -4px;
+    }
+    header.top-banner-nav a {
+      color: #444;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .top-banner-nav a:active,
+    .top-banner-nav a:focus {
+     color: #5838d7; /* darker neon violet */
+     outline: none;
+    }
+    main {
+      padding-top: 140px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: var(--card);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-container p {
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding-bottom: 40px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <header class="top-banner-icons">
+  <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
+  <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="index.html#contact"><i class="fas fa-envelope"></i></a>
+  <button onclick="toggleTheme()"><i id="themeIcon" class="fas fa-moon"></i></button>
+</header>
+
+<header class="top-banner-nav">
+  <a href="index.html#top" id="home-link">Home</a>
+  <a href="about.html" id="about-link" class="active">About Me</a>
+  <a href="index.html#projects" id="projects-link">Projects</a>
+  <a href="index.html#contact" id="contact-link">Contact</a>
+</header>
+
+  <main>
+    <h2 class="section-title">You can call me Arte. Everyone else does.</h2>
+    <section class="about-container" style="text-align: center;">
+  <img src="profile.jpg" alt="Aretas Petronis" style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin-bottom: 30px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+  <p>
+    So why Arte, you ask? Well, it rolls off the tongue a bit easier 😉 and let’s be honest, life’s too short for formalities. Most people I work with don’t even realise I have a longer name.
+  </p>
+  <p>
+    I’ve always loved making sense of things, whether it was solving problems at work or figuring out how to streamline chaos. For years, I worked in roles where I supported people, fixed systems, and kept things running smoothly behind the scenes. But the more I helped, the more I found myself asking: Why are we doing it this way?
+  </p>
+  <p>
+    That curiosity led me to data. I didn’t just want to react, I wanted to dig deeper, spot patterns, and help teams make better calls with confidence. So I leaned into learning, completed the Data Analytics Career Accelerator at LSE, and here I am. 
+  </p>
+</section>
+  </main>
+
+  <footer>
+    © 2025 Aretas Petronis. Built with ♥️ using Netlify.
+  </footer>
+
+  <script>
+    function updateIcon() {
+      const icon = document.getElementById("themeIcon");
+      if (document.body.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+      updateIcon();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode") === "true";
+      document.body.classList.toggle("dark-mode", saved);
+      updateIcon();
+    });
+  </script>
+  <script>
+  const navLinks = document.querySelectorAll('.top-banner-nav a');
+  const currentUrl = window.location.href;
+
+  navLinks.forEach(link => {
+    if (currentUrl.includes(link.getAttribute('href'))) {
+      link.classList.add('active');
+    }
+
+    link.addEventListener('click', function () {
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

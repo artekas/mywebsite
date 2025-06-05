@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aretas Petronis Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #f2f2f2;
+      --text: #666666;
+      --card: #ffffff;
+    }
+
+    body.dark-mode {
+      --bg: #1e1e1e;
+      --text: #f0f0f0;
+      --card: #333;
+    }
+
+    body {
+     margin: 0;
+     font-family: 'Inter', sans-serif;
+     background-color: var(--bg);
+     color: var(--text);
+     display: flex;
+     flex-direction: row;
+     min-height: 100vh;
+     transition: background 0.3s, color 0.3s;
+    }
+
+    aside {
+      width: 220px;
+      padding: 40px 20px;
+      color: #888888;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      height: 100vh;
+      background: var(--bg);
+    }
+
+    .profile-pic {
+     width: 130px;
+     height: 130px;
+     border-radius: 50%;
+     object-fit: cover;
+     object-position: center top;
+     margin-top: 60px;
+     margin-bottom: 14px;
+    }
+
+     .name {
+     font-size: 20px;
+     font-weight: 600;
+     color: #374151;
+     text-align: center;
+     margin-bottom: 10px;
+     line-height: 1.2;
+     transition: color 0.3s;
+    }
+
+     body.dark-mode .name {
+     color: #ffffff;
+    }
+
+     .subtitle {
+     font-size: 13px;
+     color: #888;
+     text-align: center;
+     line-height: 1.4;
+     max-width: 180px;
+     margin-bottom: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 6px 25px;
+      border-radius: 4px;
+    }
+
+    .nav-links a i {
+     width: 20px;
+     text-align: center;
+    }
+
+    .nav-links a:hover {
+      background: rgba(0,0,0,0.05);
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 40px 60px;
+      flex-grow: 1;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .top-icons {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+     
+    .top-banner {
+      position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 60px;
+     background-color: #FAFAFA;
+     z-index: 10;
+    }
+
+    .top-icons {
+     display: flex;
+     align-items: center;
+     gap: 18px;
+     position: absolute;
+     top: 20px;
+     right: 30px;
+    }
+
+    .top-icons a,
+    .top-icons button {
+     color: var(--text);
+     text-decoration: none;
+     font-size: 20px;
+     background: none;
+     border: none;
+     cursor: pointer;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 75px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card p {
+      margin: 0;
+      padding: 8px 12px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+      border-top: 1px solid #d3d3d3;
+      text-align: center;
+    }
+
+    body.dark-mode .project-card p {
+      border-top: none;
+    }
+
+    #theme-toggle {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    footer {
+     text-align: center;
+     font-size: 13px;
+     padding: 20px 0;
+     color: var(--text);
+     margin-top: auto;
+    }
+
+    body.dark-mode .top-banner {
+      background-color: #2c2c2c;
+    }
+
+   .tableau-logo {
+      height: 20px;
+      vertical-align: middle;
+      margin-top: -2px;
+      transition: filter 0.3s ease;
+    }
+
+    body.dark-mode .tableau-logo {
+      filter: brightness(0) invert(1);
+    }
+
+    .tableau-container {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 10;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+   .tableau-container iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+   
+    @media (max-width: 768px) {
+    .tableau-container {
+      aspect-ratio: 4 / 3;
+    }
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="top-banner">
+  <div class="top-icons">
+    <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank">
+    <img src="logo-tableau.svg" alt="Tableau" class="tableau-logo" />
+    </a>
+    <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#contact"><i class="fas fa-envelope"></i></a>
+    <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Theme"><i class="far fa-moon"></i></button>
+  </div>
+  </div>
+    <aside>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+    <div class="name">Aretas Petronis</div>
+    <div class="subtitle">Data Analytics. SQL. Python. Visualisation.</div>
+    <nav class="nav-links">
+      <a href="about.html"><i class="fas fa-user"></i>About Me</a>
+    <a href="index.html#projects"><i class="fas fa-briefcase"></i>Projects</a>
+    <a href="dashboards.html">
+    <i class="fas fa-chart-bar"></i>Dashboards</a>
+    <a href="https://www.linkedin.com/in/aretas-petronis-15672a222/" target="_blank">
+    <i class="fab fa-linkedin"></i>Connect</a>
+    <a href="#"><i class="fas fa-file"></i>Resumé</a>
+    <a href="#" onclick="toggleTheme()" id="sidebar-theme-toggle"><i class="fas fa-moon"></i><span>Dark Mode</span></a>
+
+    </nav>
+  </aside>
+
+  <main>
+  <section id="dashboards" style="scroll-margin-top: 80px;">
+    <h2 class="section-title">Explore Dashboards</h2>
+    <div class="project-grid">
+      <a href="gaea-dashboard.html" class="project-card">
+        <img src="dashboard1.png" alt="GAEA AI Dashboard">
+        <p>GAEA AI Dashboard</p>
+      </a>
+      <a href="2market-dashboard.html" class="project-card">
+        <img src="dashboard2.png" alt="2Market Dashboard">
+        <p>2Market Dashboard</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Aretas Petronis. Built with ♥️ using Netlify.
+  </footer>
+</main>
+
+  <script>
+  function toggleTheme(forceState = null) {
+    const body = document.body;
+    const isDark = forceState !== null ? forceState : body.classList.toggle('dark-mode');
+    body.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('darkMode', isDark);
+
+    const topIcon = document.querySelector('#theme-toggle i');
+    if (topIcon) topIcon.className = isDark ? 'far fa-sun' : 'far fa-moon';
+
+    const sidebarLink = document.getElementById('sidebar-theme-toggle');
+    if (sidebarLink) {
+      const sidebarIcon = sidebarLink.querySelector('i');
+      const sidebarText = sidebarLink.querySelector('span');
+      sidebarIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      sidebarText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('darkMode') === 'true';
+    document.body.classList.toggle('dark-mode', saved);
+    toggleTheme(saved);
+  });
+</script>
+
+</body>
+</html>
