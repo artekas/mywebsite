@@ -357,10 +357,11 @@
     }
 
     window.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("darkMode") === "true";
-      document.body.classList.toggle("dark-mode", saved);
-      updateIcon();
-    });
+  const saved = localStorage.getItem("darkMode");
+  const prefersDark = saved === null || saved === "true"; // dark by default
+  document.body.classList.toggle("dark-mode", prefersDark);
+  updateIcon();
+});
   </script>
   <script>
   const navLinks = document.querySelectorAll('.top-banner-nav a');
