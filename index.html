@@ -80,7 +80,7 @@
     /* Top banner (social icons) */
     .top-banner-icons a,
     .top-banner-icons button {
-      color: white;
+      color: white !important;
       text-decoration: none;
       font-size: 16px;
       background: none;
@@ -234,7 +234,7 @@
       font-family: 'Inter', sans-serif;
       font-weight: 500;
       font-size: 16px;
-      color: white;
+      color: white !important;
       background: var(--highlight);
       width: 140px;
       padding: 12px 0;
@@ -305,11 +305,24 @@
       background-color: var(--bg-2);
      }
      .section-projects {
-  background-color: var(--bg-3);
-}
-.section-contact {
-  background-color: var(--bg-4);
-}
+      background-color: var(--bg-3);
+    }
+     .section-contact {
+      background-color: var(--bg-4);
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:visited {
+      color: inherit;
+    }
+    a:hover {
+      color: inherit;
+    }  
+    a:active {
+      color: inherit;
+    }
   </style>
 </head>
 <body>
@@ -370,20 +383,30 @@
   <div style="max-width: 1200px; margin: auto; padding: 0 40px;">
     <h2 class="section-title" id="projectsTitle">Projects</h2>
     <div class="project-grid">
+      <!-- Project 1 -->
+      <a href="GAEA_AI.html" style="text-decoration: none;">
       <div class="project-card">
-     <img src="project_1.png" alt="GAEA AI">
-     <div class="project-tags">
-     <span class="project-tag">Python & Tableau</span>
-     </div>
-     <p>GAEA AI: Ice Demand Forecasting</p>
-     </div>
+      <img src="project_1.png" alt="GAEA AI">
+      <div class="project-tags">
+      <span class="project-tag">Python & Tableau</span>
+      </div>
+      <p>GAEA AI: Ice Demand Forecasting</p>
+      </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="NHS_UK.html" style="text-decoration: none;">
       <div class="project-card">
-     <img src="project_2.png" alt="NHS UK">
-     <div class="project-tags">
-     <span class="project-tag">Python & Tableau</span>
-     </div>
-     <p>NHS UK: Missed Appointments</p>
-     </div>
+      <img src="project_2.png" alt="NHS UK">
+      <div class="project-tags">
+      <span class="project-tag">Python & Tableau</span>
+      </div>
+      <p>NHS UK: Missed Appointments</p>
+      </div>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="TURTLE_GAMES.html" style="text-decoration: none;">
       <div class="project-card">
       <img src="project_3.png" alt="Turtle Games">
       <div class="project-tags">
@@ -391,6 +414,10 @@
       </div>
       <p>Turtle Games: Customer Segmentation</p>
       </div>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="2Market.html" style="text-decoration: none;">
       <div class="project-card">
       <img src="project_4.png" alt="2Market">
       <div class="project-tags">
@@ -398,6 +425,7 @@
       </div>
       <p>2Market: Retail Expansion</p>
       </div>
+      </a>
     </div>
   </section>
   </div>

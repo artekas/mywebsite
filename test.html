@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NHS UK – Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #e0e0e0;
+      --text: #333;
+      --accent: #f5f5f5;
+      --nav: #d6d6d6;
+      --card: #ffffff;
+      --alt: #f9f9f9;
+      --highlight: #8a4dff;
+    }
+    body.dark-mode {
+      --bg: #1c1c1c;
+      --text: #eaeaea;
+      --accent: #2a2a2a;
+      --nav: #2f2f2f;
+      --card: #4a4a4a;
+      --alt: #1a1a1a;
+      --highlight: #8a4dff;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header.top-banner-icons {
+      background: var(--highlight);
+      height: 48px;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    header.top-banner-icons a,
+    header.top-banner-icons button {
+      color: white;
+      font-size: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    header.top-banner-nav {
+      background: var(--card);
+      padding: 14px 30px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      font-weight: 500;
+      position: fixed;
+      top: 48px;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      border-bottom: 1px solid #bbb;
+    }
+    .top-banner-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+    }
+    .top-banner-nav a.active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var(--highlight);
+      left: 0;
+      bottom: -4px;
+    }
+    .container {
+      padding: 140px 20px 80px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 50px;
+      margin-bottom: 12px;
+      color: var(--highlight);
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--accent);
+    }
+    h1, h2, p, ul {
+      text-align: left;
+    }
+    h2 {
+      color: var(--highlight);
+      font-size: 22px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-banner-icons">
+    <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
+    <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="index.html#contact"><i class="fas fa-envelope"></i></a>
+    <button onclick="toggleTheme()"><i id="themeIcon" class="far fa-moon"></i></button>
+  </header>
+  <header class="top-banner-nav">
+    <a href="index.html#top">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </header>
+  <main class="container">
+    <h1>NHS UK: Appointments Data Analysis</h1>
+
+    <h2>Project Brief</h2>
+    <p>
+      I conducted an in-depth analysis of NHS UK appointment data (2020–2022) to identify service utilization patterns,
+      assess resource capacity, and investigate missed appointments that incur significant costs.
+    </p>
+
+    <h2>Objectives</h2>
+    <p>The analysis supported several key business objectives:</p>
+    <ul>
+      <li>Understanding service utilization trends and patterns</li>
+      <li>Assessing staff and capacity adequacy across regions</li>
+      <li>Reducing missed appointments through targeted interventions</li>
+      <li>Evaluating the value of external data sources for decision-making</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+      The project uncovered meaningful trends in missed appointments and regional resource disparities. These insights
+      informed recommendations for strategic planning, service delivery improvements, and evidence-based staffing decisions.
+    </p>
+  </main>
+  <footer>
+    © 2025 Aretas Petronis. Built with ♥️ using Netlify.
+  </footer>
+  <script>
+    function updateIcon() {
+      const icon = document.getElementById("themeIcon");
+      if (document.body.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    }
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+      updateIcon();
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("darkMode");
+      const prefersDark = saved === null || saved === "true";
+      document.body.classList.toggle("dark-mode", prefersDark);
+      updateIcon();
+    });
+  </script>
+</body>
+</html>

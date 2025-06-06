@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aretas Petronis Portfolio</title>
@@ -302,15 +301,54 @@
       background-color: var(--bg-2);
      }
      .section-projects {
-  background-color: var(--bg-3);
-}
-.section-contact {
-  background-color: var(--bg-4);
-}
+      background-color: var(--bg-3);
+    }
+    .section-contact {
+      background-color: var(--bg-4);
+    }
+    h1, h2, p, ul {
+      text-align: left;
+    }
+    h2 {
+      color: var(--highlight);
+      font-size: 22px;
+      margin-top: 40px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    h1 {
+      margin-bottom: 24px;
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    h2 {
+     color: var(--highlight);
+     font-size: 22px;
+     font-weight: 600;
+     margin-top: 50px;
+     margin-bottom: 12px;
+    }
+
+     p, ul li {
+     line-height: 1.75;
+     font-size: 16px;
+     margin-bottom: 8px;
+    }
+
+    ul {
+     margin-bottom: 24px;
+     padding-left: 20px;
+    }
+    p + ul {
+     margin-top: 16px;
+    }
+
   </style>
-  </head>
+</head>
 <body>
-  <header class="top-banner-icons">
+   <header class="top-banner-icons">
     <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
     <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -323,26 +361,38 @@
   <a href="index.html#projects" id="projects-link">Projects</a>
   <a href="index.html#contact" id="contact-link">Contact</a>
 </header>
-
   <main>
-  <section class="section-bg section-hero hero">
-  <div class="hero-content" style="max-width: 700px; margin: 0 auto; text-align: center; padding-top: 50px;">
-    <h1 class="section-title">You can call me Arte. Everyone else does.</h1>
-    <img src="profile.jpg" alt="Aretas Petronis"
-      style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; margin: 30px auto; display: block; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
-    <p style="margin-bottom: 16px;">So why Arte, you ask? Well, it rolls off the tongue a bit easier 😉 and let’s be honest, life’s too short for formalities. Most people I work with don’t even realise I have a longer name.</p>
-    <p style="margin-bottom: 16px;">I’ve always loved making sense of things, whether it was solving problems at work or figuring out how to streamline chaos. For years, I worked in roles where I supported people, fixed systems, and kept things running smoothly behind the scenes. But the more I helped, the more I found myself asking: Why are we doing it this way?</p>
-    <p>That curiosity led me to data. I didn’t just want to react, I wanted to dig deeper, spot patterns, and help teams make better calls with confidence. So I leaned into learning, completed the Data Analytics Career Accelerator at LSE, and here I am.</p>
-  </div>
-</section>
+  <section class="section-bg section-projects" style="padding: 180px 20px 80px;">
+  <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+  <h1>NHS UK: Appointments Data Analysis</h1>
 
+    <h2>Project Brief</h2>
+    <p>
+      I conducted an in-depth analysis of NHS UK appointment data (2020–2022) to identify service utilization patterns,
+      assess resource capacity, and investigate missed appointments that incur significant costs.
+    </p>
+
+    <h2>Objectives</h2>
+    <p>The analysis supported several key business objectives:</p>
+    <ul>
+      <li>Understanding service utilization trends and patterns</li>
+      <li>Assessing staff and capacity adequacy across regions</li>
+      <li>Reducing missed appointments through targeted interventions</li>
+      <li>Evaluating the value of external data sources for decision-making</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+      The project uncovered meaningful trends in missed appointments and regional resource disparities. These insights
+      informed recommendations for strategic planning, service delivery improvements, and evidence-based staffing decisions.
+    </p>
+    </div>
+    </section>
   </main>
-
   <footer>
     © 2025 Aretas Petronis. Built with ♥️ using Netlify.
   </footer>
-
-  <script>
+ <script>
     function updateIcon() {
   const icon = document.getElementById("themeIcon");
   if (document.body.classList.contains("dark-mode")) {
