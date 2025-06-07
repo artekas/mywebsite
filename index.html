@@ -330,6 +330,22 @@
       margin-right: auto;
       font-family: 'Inter', sans-serif;
     }
+    .tool-card {
+      border: 1px solid #888;
+    }
+    body.dark-mode .tool-card {
+      border: 1px solid white;
+    }
+    body.dark-mode .tools-subtitle {
+      color: white;
+    }
+    .tool-logo {
+      width: 40px;
+      height: 40px;
+    }
+    body.dark-mode .tool-logo {
+      filter: invert(100%);
+    }
   </style>
 </head>
 <body>
@@ -360,28 +376,28 @@
   <section id="tools" class="section-bg section-tools">
   <div style="max-width: 1200px; margin: auto; text-align: center;">
     <h2 class="section-title">My Tools</h2>
-    <p style="font-size: 16px; color: #666; margin-bottom: 50px;">
+    <p class="tools-subtitle" style="font-size: 16px; margin-bottom: 50px;">
       Tools I use daily to clean data, uncover insights, and build impactful stories.
     </p>
     <div class="tools-grid">
       <div class="tool-card">
-        <i class="fas fa-wave-square fa-2x"></i>
+        <img src="python.svg" alt="Python Logo" class="tool-logo" />
         <span>Python</span>
       </div>
       <div class="tool-card">
-        <i class="fas fa-broadcast-tower fa-2x"></i>
+        <img src="sql.svg" alt="SQL Logo" class="tool-logo" />
         <span>SQL</span>
       </div>
       <div class="tool-card">
-        <i class="fas fa-table fa-2x"></i>
+        <img src="excel.svg" alt="SQL Logo" class="tool-logo" />
         <span>Excel</span>
       </div>
       <div class="tool-card">
-        <i class="fas fa-code fa-2x"></i>
+        <img src="r.svg" alt="R Logo" class="tool-logo" />
         <span>R</span>
       </div>
       <div class="tool-card">
-        <i class="fas fa-chart-pie fa-2x"></i>
+        <img src="logo-tableau.svg" alt="Tableau Logo" class="tool-logo" />
         <span>Tableau</span>
       </div>
     </div>
@@ -429,7 +445,7 @@
       <div class="project-card">
       <img src="project_4.JPG" alt="2Market">
       <div class="project-tags">
-      <span class="project-tag">Python & Tableau</span>
+      <span class="project-tag">SQL, Tableau & Excel</span>
       </div>
       <p>2Market: Retail Expansion</p>
       </div>
