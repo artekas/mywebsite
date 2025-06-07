@@ -351,6 +351,15 @@
       margin-right: auto;
       font-family: 'Inter', sans-serif;
     }
+    @media (max-width: 768px) {
+    .project-header-wrapper {
+      padding-top: 30px !important;
+    }
+
+    .project-title {
+      font-size: 28px !important;
+    }
+    }
   </style>
 </head>
 <body>
@@ -368,12 +377,31 @@
   <a href="index.html#projects" id="projects-link">Projects</a>
   <a href="index.html#contact" id="contact-link">Contact</a>
 </header>
-  <main>
-  <section class="section-bg section-projects" style="padding: 180px 20px 80px;">
-  <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
-  <h1>2Market: Retail Expansion</h1>
-
-    <h2>Project Brief</h2>
+  <!-- NEW wrapper starts -->
+   <div style="background: #e3d9fd; padding-top: 96px;">
+  <div style="max-width: 100%; margin: 0 auto;">
+  <!-- Full-width violet title banner -->
+  <div style="background: #e3d9fd; padding: 49px 20px; color: black; margin-bottom: 0; border-bottom: 1px solid #bbb;">
+  <div class="project-header-wrapper" style="max-width: 900px; margin: 0 auto; padding: 0 20px; display: flex; flex-direction: column; justify-content: center; height: 120px;">
+  <h1 class="project-title" style="margin: 0; font-size: 36px; font-weight: 700;">2Market: Retail Expansion</h1>
+  <div style="display: flex; align-items: center; gap: 16px; margin-top: 12px;">
+  <p style="margin: 0; font-size: 16px;">LSE Project</p>
+  <div style="width: 1px; height: 20px; background-color: #555;"></div> <!-- Thin vertical line -->
+  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Python</span>
+  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Tableau</span>
+  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">View Code on GitHub</span>
+  <a href="https://public.tableau.com/app/profile/aretas.petronis/viz/2MarketRetailExpansionAnalysis/MainDashboard" target="_blank" style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight); text-decoration: none;">
+  View Dashboard on Tableau
+  </a> 
+</div>
+</div>
+  <!-- NEW wrapper ends -->
+  </div>
+  </div>
+   <main>
+  <section class="section-bg section-projects" style="padding: 10px 0;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+    <h2>Project Context</h2>
     <p>
       The project was prompted by the 2022 heatwave in Spain, which led to a national ice shortage,
       lost revenue, and public backlash. The business problem we were addressing is how to better
@@ -381,22 +409,69 @@
     </p>
 
     <h2>Objectives</h2>
-    <p>The analysis supported several key business objectives:</p>
+    <p>This analysis focuses on key questions to guide decision-making and optimise operations:</p>
     <ul>
-      <li>Understanding service utilization trends and patterns</li>
-      <li>Assessing staff and capacity adequacy across regions</li>
-      <li>Reducing missed appointments through targeted interventions</li>
-      <li>Evaluating the value of external data sources for decision-making</li>
+      <li>Whether staffing and infrastructure levels align with patient needs</li>
+      <li>How resources are deployed across regions and services</li>
+      <li>What patterns underlie missed appointments and where interventions might help</li>
+      <li>How deeper data insights can guide smarter resource allocation</li>
     </ul>
+
+    <h2>Analytical Approach</h2>
+    <div style="overflow-x: auto; margin-top: 20px;">
+  <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
+    <thead style="background-color: var(--accent);">
+      <tr style="text-align: left; border-bottom: 2px solid var(--highlight);">
+        <th style="padding: 12px; font-weight: 600; border-right: 1px solid #ccc;">Process</th>
+        <th style="padding: 12px 12px 12px 19px; font-weight: 600;">Highlights</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Import</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          <div style="margin-bottom: 8px;">
+            Loaded multiple NHS datasets with different time ranges and consolidated
+          </div>
+          <div>
+            appointment data across regional, national, and duration-specific sources
+          </div>
+       </td>
+       </tr>
+       <tr style="background-color: var(--card); border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Cleaning</td>
+        <td style="padding: 12px;">
+          <ul style="padding-left: 20px; margin: 0;">
+            <li>Verified data consistency across the datasets</li>
+            <li>Validated appointment count alignments</li>
+            <li>Handled duplicate records</li>
+            <li>Standardised datetime fields for analysis</li>
+          </ul>
+        </td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Enhancement</td>
+        <td style="padding: 12px;">
+          <ul style="padding-left: 20px; margin: 0;">
+            <li>Mapped location codes to NHS organisational structure</li>
+            <li>Added geographical context by linking regions, ICBs, and sub-ICBs</li>
+            <li>Created derived fields for time and service settings</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
     <h2>Conclusion</h2>
     <p>
       The project uncovered meaningful trends in missed appointments and regional resource disparities. These insights
       informed recommendations for strategic planning, service delivery improvements, and evidence-based staffing decisions.
     </p>
-    </div>
     </section>
-  </main>
+</div>
+</main>
   <footer>
     © 2025 Aretas Petronis. Built with ♥️ using Netlify.
   </footer>
