@@ -359,12 +359,35 @@
     .project-title {
       font-size: 28px !important;
     }
-  }
+    }
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background-color: #b695ff;
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: none; /* hidden by default */
+      transition: background-color 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      background-color: #5838d7;
+    }
   </style>
 </head>
 <body>
    <header class="top-banner-icons">
-    <span class="site-title">Portfolio.</span>
+    <a href="#top" class="site-title">Portfolio.</a>
     <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
     <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -514,5 +537,25 @@
     });
   });
 </script>
+<script>
+  // Show button when scrolled down
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Scroll to top on click
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
 </body>
 </html>

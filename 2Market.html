@@ -360,11 +360,51 @@
       font-size: 28px !important;
     }
     }
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background-color: #b695ff;
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: none; /* hidden by default */
+      transition: background-color 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      background-color: #5838d7;
+    }
+    ol li {
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+    .insight-subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
   </style>
 </head>
 <body>
    <header class="top-banner-icons">
-    <span class="site-title">Portfolio.</span>
+    <a href="#top" class="site-title">Portfolio.</a>
     <a href="https://github.com/artekas" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
     <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -387,7 +427,8 @@
   <div style="display: flex; align-items: center; gap: 16px; margin-top: 12px;">
   <p style="margin: 0; font-size: 16px;">LSE Project</p>
   <div style="width: 1px; height: 20px; background-color: #555;"></div> <!-- Thin vertical line -->
-  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Python</span>
+  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Excel</span>
+  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">SQL</span>
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Tableau</span>
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">View Code on GitHub</span>
   <a href="https://public.tableau.com/app/profile/aretas.petronis/viz/2MarketRetailExpansionAnalysis/MainDashboard" target="_blank" style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight); text-decoration: none;">
@@ -403,22 +444,63 @@
     <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
     <h2>Project Context</h2>
     <p>
-      The project was prompted by the 2022 heatwave in Spain, which led to a national ice shortage,
-      lost revenue, and public backlash. The business problem we were addressing is how to better
-      forecast and respond to climate-sensitive demand for ice products
+      2Market, a global supermarket operating both online and in-store, seeks to refine its
+      marketing and sales strategies. The core challenge lies in unlocking insights from
+      customer demographics, purchasing behaviours, and advertising efficacy. 
     </p>
 
     <h2>Objectives</h2>
-    <p>This analysis focuses on key questions to guide decision-making and optimise operations:</p>
-    <ul>
-      <li>Whether staffing and infrastructure levels align with patient needs</li>
-      <li>How resources are deployed across regions and services</li>
-      <li>What patterns underlie missed appointments and where interventions might help</li>
-      <li>How deeper data insights can guide smarter resource allocation</li>
-    </ul>
+    <p>Key questions include:</p>
+    <ol style="padding-left: 20px; list-style-type: decimal;">
+      <li>How can customer segments be better targeted to maximise sales and conversions?</li>
+      <li>Which advertising platforms have the greatest impact on engagement with key demographic groups?</li>
+      <li>What product preferences and trends emerge across different customer groups, and how can they inform future marketing strategies?</li>
+    </ol>
 
     <h2>Analytical Approach</h2>
-    <div style="overflow-x: auto; margin-top: 20px;">
+    <h3 class="section-subtitle">1. Data Preparation & Cleaning</h3>
+    <p>For this particular project I chose to clean data in Excel</p>
+<div style="overflow-x: auto; margin-top: 20px;">
+  <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
+    <thead style="background-color: var(--accent);">
+      <tr style="text-align: left; border-bottom: 2px solid var(--highlight);">
+        <th style="padding: 12px; font-weight: 600; border-right: 1px solid #ccc;">Process</th>
+        <th style="padding: 12px 12px 12px 19px; font-weight: 600;">Highlights</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Ad Data Cleaning</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          <ul style="padding-left: 20px; margin: 0;">
+            <li>Formatted columns and removed decimals</li>
+            <li>Verified and corrected header data types</li>
+            <li>Validated ranges using formulas</li>
+            <li>Checked and removed duplicates</li>
+          </ul>
+        </td>
+      </tr>
+      <tr style="background-color: var(--card); border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Marketing Data Cleaning</td>
+        <td style="padding: 12px;">
+          <ul style="padding-left: 20px; margin: 0;">
+            <li>Checked for blanks and inconsistencies</li>
+            <li>Formatted data and identified outliers</li>
+            <li>Replaced extreme outlier values (e.g. income 666666) with median</li>
+            <li>Removed duplicate rows excluding unique ID</li>
+            <li>Deleted unmatched IDs across both datasets</li>
+            <li>Formatted dates to SQL-compatible format</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="section-subtitle">2. SQL-Based Analysis</h3>
+<p>SQL was used to structure the cleaned data, develop targeted queries, and extract actionable insights across segments.</p>
+
+<div style="overflow-x: auto; margin-top: 20px;">
   <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
     <thead style="background-color: var(--accent);">
       <tr style="text-align: left; border-bottom: 2px solid var(--highlight);">
@@ -429,38 +511,121 @@
     <tbody>
       <tr style="border-bottom: 1px solid #ccc;">
         <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Import</td>
-        <td style="padding: 14px 14px 14px 19px;">
-          <div style="margin-bottom: 8px;">
-            Loaded multiple NHS datasets with different time ranges and consolidated
-          </div>
-          <div>
-            appointment data across regional, national, and duration-specific sources
-          </div>
-       </td>
-       </tr>
-       <tr style="background-color: var(--card); border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Cleaning</td>
-        <td style="padding: 12px;">
-          <ul style="padding-left: 20px; margin: 0;">
-            <li>Verified data consistency across the datasets</li>
-            <li>Validated appointment count alignments</li>
-            <li>Handled duplicate records</li>
-            <li>Standardised datetime fields for analysis</li>
-          </ul>
-        </td>
+        <td style="padding: 14px 14px 14px 19px;">Loaded Excel-cleaned datasets into SQL tables for analysis-ready structure</td>
       </tr>
       <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Enhancement</td>
-        <td style="padding: 12px;">
-          <ul style="padding-left: 20px; margin: 0;">
-            <li>Mapped location codes to NHS organisational structure</li>
-            <li>Added geographical context by linking regions, ICBs, and sub-ICBs</li>
-            <li>Created derived fields for time and service settings</li>
-          </ul>
-        </td>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Query Development</td>
+        <td style="padding: 14px 14px 14px 19px;">Created SQL queries using joins, aggregates, and case statements to group and filter data by country, marital status, and ad campaigns</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Customer Profiling</td>
+        <td style="padding: 14px 14px 14px 19px;">Calculated average age and income across key customer segments (e.g. marital status, income tier)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Performance Segmentation</td>
+        <td style="padding: 14px 14px 14px 19px;">Ranked most popular products by demographic and country to inform targeting</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Campaign Effectiveness</td>
+        <td style="padding: 14px 14px 14px 19px;">Measured ad effectiveness by comparing purchase behaviour across platforms and segments</td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<h3 class="section-subtitle">3. Tableau Visualisation & Insights</h3>
+<p>Tableau was used to visually explore data trends, segment customer behaviour, and support actionable marketing decisions.</p>
+
+<div style="overflow-x: auto; margin-top: 20px;">
+  <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
+    <thead style="background-color: var(--accent);">
+      <tr style="text-align: left; border-bottom: 2px solid var(--highlight);">
+        <th style="padding: 12px; font-weight: 600; border-right: 1px solid #ccc;">Process</th>
+        <th style="padding: 12px 12px 12px 19px; font-weight: 600;">Highlights</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Integration</td>
+        <td style="padding: 14px 14px 14px 19px;">Joined marketing and ad datasets via unique ID; validated link accuracy through visual inspection</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Customer Segmentation</td>
+        <td style="padding: 14px 14px 14px 19px;">Created age group buckets (e.g. "Young Adults", "Retirees") using calculated fields to enhance clarity</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Engagement Analysis</td>
+        <td style="padding: 14px 14px 14px 19px;">Visualised product purchases by age group, marital status, and region to spot high-engagement segments</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Sales Attribution</td>
+        <td style="padding: 14px 14px 14px 19px;">Compared in-store vs web purchases across age groups using calculated share-of-total measures</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Dashboard Insights</td>
+        <td style="padding: 14px 14px 14px 19px;">Created interactive charts to highlight retention rates, campaign response status, and revenue drivers</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Key Insights</h2>
+
+<!-- SECTION 1 -->
+<h3 class="insight-subtitle">Regional Revenue Contribution</h3>
+<ul>
+  <li>Spain leads overall revenue with $634K, followed by South Africa and Canada</li>
+  <li>Montenegro, despite low volume, yields the highest <strong>revenue per customer</strong></li>
+  <li>Germany and USA show high efficiency per customer despite smaller overall share</li>
+</ul>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="revenue_by_country.png" alt="Revenue by Country Chart" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Spain and South Africa contribute the highest revenue, but Montenegro generates the most revenue per customer.</em></p>
+</div>
+
+<!-- SECTION 2 -->
+<h3 class="insight-subtitle">Purchase Activity by Age Group</h3>
+<ul>
+  <li><strong>Established Professionals (45–54)</strong> showed the highest purchase activity</li>
+  <li>Closely followed by <strong>those nearing retirement</strong> (55–64) and <strong>Retirees</strong> (65–74)</li>
+</ul>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="purchase_by_age.png" alt="Purchase by Age Group Chart" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: The 45–54 age group drove the highest number of purchases, with strong activity also seen in the 55–64 and 65–74 segments.</em></p>
+</div>
+
+<!-- SECTION 3 -->
+<h3 class="insight-subtitle">Household Type Spending Patterns</h3>
+<ul>
+  <li><strong>Child-free customers</strong> drove 2–4× higher spending, particularly in alcohol and meat categories</li>
+  <li>They consistently outspent households with children across all product groups</li>
+</ul>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="family_type.png" alt="Family Type Revenue Chart" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Child-free customers contribute disproportionately to revenue compared to households with children.</em></p>
+</div>
+
+
+<h4>📊 Marketing Effectiveness</h4>
+<ul>
+  <li><strong>Instagram and Facebook</strong> were the most effective ad platforms, especially among single and mid-income customers</li>
+  <li>Social media ads achieved higher campaign response rates than bulkmail or brochure methods</li>
+  <li>Instagram produced the highest deal conversion rates in alcohol sales</li>
+</ul>
+
+<div style="background-color: #e8f0ff; padding: 12px 18px; margin: 12px 0; border-left: 4px solid #6e44ff;">
+  <strong>Value Discovery:</strong> Instagram generated the most campaign success among younger and high-income users
+</div>
+
+<h4>🛍️ Product & Purchase Trends</h4>
+<ul>
+  <li>Liquor and Meat made up over 70% of revenue in most countries, led by Spain and South Africa</li>
+  <li>Web purchases are growing, but <strong>in-store shopping still dominates</strong> among higher spenders</li>
+  <li>Customers without children showed stronger loyalty and higher transaction frequency</li>
+</ul>
+
+<div style="background-color: #e8f0ff; padding: 12px 18px; margin: 12px 0; border-left: 4px solid #6e44ff;">
+  <strong>Behavioural Trend:</strong> In-store shoppers from the "Established Professionals" segment drive the bulk of high-value purchases
 </div>
 
 
@@ -514,5 +679,25 @@
     });
   });
 </script>
+<script>
+  // Show button when scrolled down
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Scroll to top on click
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
 </body>
 </html>
