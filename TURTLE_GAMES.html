@@ -514,7 +514,7 @@
 
     window.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("darkMode");
-  const prefersDark = saved === null || saved === "true"; // dark by default
+        const prefersDark = saved === "true";
   document.body.classList.toggle("dark-mode", prefersDark);
   updateIcon();
 });
