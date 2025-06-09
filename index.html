@@ -147,6 +147,7 @@
       text-align: center;
       margin-top: 20px;
       position: relative;
+      z-index: 1;
     }
     .hero h1, .hero p, .section-title {
       transition: opacity 0.25s ease-out;
@@ -369,6 +370,46 @@
     #scrollTopBtn:hover {
       background-color: #5838d7;
     }
+  .hero {
+  background-image: url('home.jpg');
+  background-size: 100%; /* Zoom in more */
+  background-position: center 30%; /* Shift upward */
+  background-repeat: no-repeat;
+  background-color: var(--bg-1);
+  color: var(--text);
+}
+
+body.dark-mode .hero {
+  background-image: url('home.jpg'); /* Optional: replace with a dark image if you have one */
+  background-color: var(--bg-1);
+}
+body.dark-mode .hero-heading {
+  color: white !important;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(216, 197, 255, 0.4); 
+  z-index: 0;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .hero::before {
+  background: rgba(0, 0, 0, 0.4); /* Adjust opacity to your taste */
+}
+.hero-subtitle {
+  font-weight: 500;
+  color: #777;
+}
+body.dark-mode .hero-subtitle {
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -378,7 +419,7 @@
     <a href="https://public.tableau.com/app/profile/aretas.petronis" target="_blank"><i class="fas fa-chart-line"></i></a>
     <a href="https://linkedin.com/in/aretas-petronis-15672a222" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="#contact"><i class="fas fa-envelope"></i></a>
-    <button onclick="toggleTheme()"><i id="themeIcon" class="far fa-moon"></i></button>
+    <button onclick="toggleTheme()"><i id="themeIcon" class="fas fa-sun"></i></button>
   </header>
   <header class="top-banner-nav">
     <a href="#top" id="home-link">Home</a>
@@ -386,16 +427,20 @@
     <a href="#projects" id="projects-link">Projects</a>
     <a href="#contact" id="contact-link">Contact</a>
   </header>
-  <div class="hero" id="top" style="background-color: var(--bg);">
+  <div class="hero" id="top">
+  <div style="position: relative; z-index: 2;">
     <h1 class="hero-heading">Hello!</h1>
     <h1 class="hero-heading">I'm Aretas Petronis</h1>
-    <p id="mainSubtitle">LSE-certified to turn "Huh?" into "Hell yes!"</p>
+    <p id="mainSubtitle" class="hero-subtitle">
+      LSE-certified to turn "Huh?" into "Hell yes!"
+    </p>
     <div class="hero-buttons">
-    <a href="#" onclick="scrollToTools(event)">Tools</a>
-    <a href="#projects">Projects</a>
-    <a href="#">Resumé</a>
+      <a href="#" onclick="scrollToTools(event)">Tools</a>
+      <a href="#projects">Projects</a>
+      <a href="#">Resumé</a>
+    </div>
   </div>
-  </div>
+</div>
   <section id="tools" class="section-bg section-tools">
   <div style="max-width: 1200px; margin: auto; text-align: center;">
     <h2 class="section-title">My Tools</h2>
