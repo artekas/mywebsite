@@ -252,11 +252,10 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     .tools-grid {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 600px;
       margin: 0 auto;
     }
     .tool-card {
@@ -347,6 +346,12 @@
     body.dark-mode .tool-logo {
       filter: invert(100%);
     }
+    .tool-logo.power-bi {
+      filter: none;
+    }
+    body.dark-mode .tool-logo.power-bi {
+      filter: invert(100%) brightness(200%);
+    }
     #scrollTopBtn {
       position: fixed;
       bottom: 24px;
@@ -409,7 +414,28 @@ body.dark-mode .hero::before {
 body.dark-mode .hero-subtitle {
   color: white !important;
 }
+.tool-logo.power-bi {
+  color: black !important;
+}
 
+body.dark-mode .tool-logo.power-bi {
+  color: white !important;
+}
+.tool-card i.power-bi {
+  color: black !important;
+}
+
+body.dark-mode .tool-card i.power-bi {
+  color: white !important;
+}
+.powerbi-icon {
+  color: black;
+  font-size: 40px;
+}
+
+body.dark-mode .powerbi-icon {
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -468,6 +494,10 @@ body.dark-mode .hero-subtitle {
         <img src="logo-tableau.svg" alt="Tableau Logo" class="tool-logo" />
         <span>Tableau</span>
       </div>
+      <div class="tool-card">
+        <i class="fab fa-microsoft fa-2x powerbi-icon"></i>
+        <span>Power BI</span>
+      </div>
     </div>
   </div>
 </section>
@@ -480,7 +510,7 @@ body.dark-mode .hero-subtitle {
       <div class="project-card">
       <img src="project_1.JPG" alt="GAEA AI">
       <div class="project-tags">
-      <span class="project-tag">Python & Tableau</span>
+      <span class="project-tag">Python, Tableau & Excel</span>
       </div>
       <p>GAEA AI: Ice Demand Forecasting</p>
       </div>

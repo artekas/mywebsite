@@ -334,7 +334,7 @@
      p, ul li {
      line-height: 1.75;
      font-size: 16px;
-     margin-bottom: 8px;
+     margin-bottom: 12px;
     }
 
     ul {
@@ -383,6 +383,15 @@
     #scrollTopBtn:hover {
       background-color: #5838d7;
     }
+    .section-subtitle {
+      margin-top: 40px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    ol li {
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -424,24 +433,25 @@
    <main>
   <section class="section-bg section-projects" style="padding: 10px 0;">
     <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
-    <h2>Project Context</h2>
-    <p>
-      The project was prompted by the 2022 heatwave in Spain, which led to a national ice shortage,
-      lost revenue, and public backlash. The business problem we were addressing is how to better
-      forecast and respond to climate-sensitive demand for ice products
-    </p>
 
-    <h2>Objectives</h2>
-    <p>This analysis focuses on key questions to guide decision-making and optimise operations:</p>
-    <ul>
-      <li>Whether staffing and infrastructure levels align with patient needs</li>
-      <li>How resources are deployed across regions and services</li>
-      <li>What patterns underlie missed appointments and where interventions might help</li>
-      <li>How deeper data insights can guide smarter resource allocation</li>
-    </ul>
+    <!-- GAEA AI Project Section -->
+<h2>Project Context</h2>
+<p>
+  Following a national ice shortage during Spain's 2022 heatwave, Gaea AI partnered with a major ice supplier and supermarket chain to improve supply chain resilience. Our mission: forecast demand more accurately and avoid future stockouts. We focused on petrol stations within 65 km of Madrid, integrating climate and behavioural patterns to identify demand spikes.
+</p>
 
-    <h2>Analytical Approach</h2>
-    <div style="overflow-x: auto; margin-top: 20px;">
+<h2>Objectives</h2>
+<ol style="padding-left: 20px; list-style-type: decimal; margin-top: 16px; margin-bottom: 32px;">
+  <li>Pinpoint spatial and temporal demand drivers for ice sales.</li>
+  <li>Forecast high-risk weeks for stockouts based on climate and behavioural signals.</li>
+  <li>Quantify lost revenue from past shortages and optimise future supply.</li>
+</ol>
+
+
+<h2>Analytical Approach</h2>
+    <h3 class="section-subtitle">Data Preparation & Cleaning</h3>
+    <p style="margin-top: 12px; margin-bottom: 20px;">All datasets were initially cleaned in Excel</p>
+<div style="overflow-x: auto; margin-top: 20px;">
   <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
     <thead style="background-color: var(--accent);">
       <tr style="text-align: left; border-bottom: 2px solid var(--highlight);">
@@ -451,48 +461,144 @@
     </thead>
     <tbody>
       <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Import</td>
-        <td style="padding: 14px 14px 14px 19px;">
-          <div style="margin-bottom: 8px;">
-            Loaded multiple NHS datasets with different time ranges and consolidated
-          </div>
-          <div>
-            appointment data across regional, national, and duration-specific sources
-          </div>
-       </td>
-       </tr>
-       <tr style="background-color: var(--card); border-bottom: 1px solid #ccc;">
         <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Cleaning</td>
-        <td style="padding: 12px;">
+        <td style="padding: 14px 14px 14px 19px;">
           <ul style="padding-left: 20px; margin: 0;">
-            <li>Verified data consistency across the datasets</li>
-            <li>Validated appointment count alignments</li>
-            <li>Handled duplicate records</li>
-            <li>Standardised datetime fields for analysis</li>
-          </ul>
-        </td>
-      </tr>
-      <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Enhancement</td>
-        <td style="padding: 12px;">
-          <ul style="padding-left: 20px; margin: 0;">
-            <li>Mapped location codes to NHS organisational structure</li>
-            <li>Added geographical context by linking regions, ICBs, and sub-ICBs</li>
-            <li>Created derived fields for time and service settings</li>
+            <li>Removing duplicates and fixing inconsistent city and community names.</li>
+            <li>Mapping station postcodes to distances from Madrid's Plaza Mayor using FreeMapTools.</li>
+            <li>Classifying stations by direction (N, S, E, W) via Google Maps for regional insights.</li>
+            <li>Validating weather data against official meteorological sources, filling gaps with verified records.</li>
+            <li>Integrating manually cross-checked public holidays and festivals (2021–2023).</li>
           </ul>
         </td>
       </tr>
     </tbody>
-  </table>
+  </table>  
 </div>
 
 
-    <h2>Conclusion</h2>
-    <p>
-      The project uncovered meaningful trends in missed appointments and regional resource disparities. These insights
-      informed recommendations for strategic planning, service delivery improvements, and evidence-based staffing decisions.
-    </p>
-    </section>
+<h3 class="section-subtitle">Toolset</h3>
+<ul>
+  <li><strong>Excel</strong>: data cleaning, formatting, location tagging</li>
+  <li><strong>Python</strong>: predictive modelling (Jupyter Notebook)</li>
+  <li><strong>Tableau</strong>: interactive dashboards, maps, demand visualisation</li>
+</ul>
+
+<h2>Exploratory Analysis & Key Insights</h2>
+<div style="background: #f2f2f2; padding: 14px 18px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 16px; margin-bottom: 24px; color: var(--text);">
+  Insight: Demand surges above 35°C were often followed by sharp dips, likely due to stockouts — a key operational blind spot.
+</div>
+
+<ul>
+  <li>Peak sales consistently aligned with <strong>weekends</strong>, especially <strong>Saturdays</strong> during heatwaves.</li>
+  <div style="text-align: center; margin: 20px 0;">
+  <img src="weekend_sales.png" alt="Weekend Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: shows how weekends had the biggest sales traffic.</em></p>
+</div>
+  <li>Sales were highest in <strong>July, followed by June and August</strong>. Week-level spikes often matched <strong>heatwave periods</strong>.</li>
+  <div style="text-align: center; margin: 20px 0;">
+  <img src="year_on_year_sales.png" alt="Year on Year Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: shows best performing months.</em></p>
+</div>
+  <li>2022 weekly average temperature was <strong>1.5°C higher</strong> than 2021 (16.8°C vs 15.3°C), correlating with surging demand.</li>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="temp_yoy.png" alt="Temperature Comparison" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Weekly average temperature 2021 vs 2022 </em></p>
+</div>
+  <li><strong>Northwest Madrid</strong> emerged as the most ice-hungry zone, with the highest-performing stations.</li>
+</ul>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="21_major_heatwave.png" alt="Major Heatwave 2021" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Sales in 2021 revealed a consistent pattern - the Northwest region was already performing strongly.</em></p>
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="22_heatwave.png" alt="Major Heatwave 2022" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Sales during heatwave in 2022 - same areas best performing.</em></p>
+</div>
+
+<h2>Predictive Modelling</h2>
+<ul>
+  <li>Built a Multiple Linear Regression model using 2022 weekly data to reduce noise and align with delivery cycles.</li>
+  <div style="text-align: center; margin: 20px 0;">
+  <img src="linear.png" alt="Linear Regression" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Average Sales per Petrol Station (Predicted vs Actual)</em></p>
+</div>
+  <li><strong>Key predictors:</strong> average max temp, station direction, weekend heat flags, public holidays/festivals, and 2-week sales lag.</li>
+  <div style="text-align: center; margin: 20px 0;">
+  <img src="key_drivers.png" alt="Key Drivers" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Average Weekly Impact per Petrol Station: Key Sales Drivers</em></p>
+</div>
+  <li>Model explained <strong>70% of variation</strong> in sales. Residuals increased for high-volume stations, suggesting unmet demand.</li>
+</ul>
+
+<!-- Suggestion: Insert scatter plot of predicted vs actual sales with NW stations highlighted -->
+<!-- Suggestion: Add residuals chart showing model underperformance for busiest stations -->
+
+<p>
+  Stockout analysis identified stations with actuals >30% below predicted during hot weeks (>28°C). Estimated 2022 <strong>lost revenue: €17,612.44</strong>, with top 3 stations in NW Madrid.
+</p>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="lost.png" alt="Lost Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Out of Stocks Cost the Business over €17,800 in Lost Sales Revenue</em></p>
+</div>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="top_3.png" alt="Top 3 by Lost Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Top 3 Stations by Lost Revenue were also from Northwest</em></p>
+</div>
+
+<h3 class="section-subtitle">2023 Forecasting</h3>
+<p>
+  We extended the model using forecasted 2023 temperatures and official holiday calendars. Weekly demand was predicted iteratively using prior lagged actuals/predictions.
+</p>
+
+<h3 class="section-subtitle">Product Optimisation</h3>
+<p>
+  Two models were built:
+</p>
+<ul>
+  <li><strong>Baseline:</strong> Demand capped at 28°C to estimate standard cube ice volume.</li>
+  <li><strong>Premium Model:</strong> Demand above baseline assumed premium format (higher margin).</li>
+</ul>
+<p>
+  Total projected 2023 revenue: <strong>€208,751.90</strong>, including <strong>€50,730.20</strong> from premium ice. Estimated profit uplift: <strong>€8,052.40</strong>.
+</p>
+<div style="text-align: center; margin: 20px 0;">
+  <img src="23_prediction.png" alt="Predicted Sales in 2023" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: 2023 Product Optimisation Model Leads to €43,000 in Premium Ice Revenue</em></p>
+</div>
+
+
+<!-- Suggestion: Include comparison bar chart: baseline vs premium model revenue -->
+
+<h2>Recommendations</h2>
+
+<div>
+  <h3 class="text-xl font-semibold">1. Trigger-Based Restocking</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px;">
+    Restock when max daily temperature exceeds 28°C and inventory drops below 30%.
+  </div>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">2. Focus on Top 25 Stations by Lost Revenue</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px;">
+    Concentrate supply efforts on high-loss stations, mostly in the NW region.
+  </div>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">3. Apply Regional Product Mix</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px;">
+    Shift premium formats to heat-prone, high-demand regions during surges to boost margin.
+  </div>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">4. Weekly Operational Integration</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px;">
+    Re-run models weekly using up-to-date temperature forecasts and sales data for responsive delivery planning.
+  </div>
 </div>
 </main>
   <footer>

@@ -458,7 +458,7 @@
     </ol>
 
     <h2>Analytical Approach</h2>
-    <h3 class="section-subtitle">1. Data Preparation & Cleaning</h3>
+    <h3 class="section-subtitle">Data Preparation & Cleaning</h3>
     <p>For this particular project I chose to clean data in Excel</p>
 <div style="overflow-x: auto; margin-top: 20px;">
   <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
@@ -497,7 +497,7 @@
   </table>
 </div>
 
-<h3 class="section-subtitle">2. SQL-Based Analysis</h3>
+<h3 class="section-subtitle">SQL-Based Analysis</h3>
 <p>SQL was used to structure the cleaned data, develop targeted queries, and extract actionable insights across segments.</p>
 
 <div style="overflow-x: auto; margin-top: 20px;">
@@ -533,8 +533,8 @@
   </table>
 </div>
 
-<h3 class="section-subtitle">3. Tableau Visualisation & Insights</h3>
-<p>Tableau was used to visually explore data trends, segment customer behaviour, and support actionable marketing decisions.</p>
+<h3 class="section-subtitle">Tableau Visualisation & Insights</h3>
+<p>Tableau was used to explore customer and product trends, visualise web vs in-store preferences, and highlight high-value segments.</p>
 
 <div style="overflow-x: auto; margin-top: 20px;">
   <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
@@ -546,28 +546,39 @@
     </thead>
     <tbody>
       <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Integration</td>
-        <td style="padding: 14px 14px 14px 19px;">Joined marketing and ad datasets via unique ID; validated link accuracy through visual inspection</td>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Segment Creation</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          Defined calculated fields for age group and family status (e.g. “Young Adults”, “Child-Free”) to enable clearer comparisons
+        </td>
       </tr>
       <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Customer Segmentation</td>
-        <td style="padding: 14px 14px 14px 19px;">Created age group buckets (e.g. "Young Adults", "Retirees") using calculated fields to enhance clarity</td>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Channel Split Visualisation</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          Created dual-axis bar + line charts to compare <strong>in-store</strong> vs <strong>web</strong> purchases across age groups
+        </td>
       </tr>
       <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Engagement Analysis</td>
-        <td style="padding: 14px 14px 14px 19px;">Visualised product purchases by age group, marital status, and region to spot high-engagement segments</td>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Product Spend Analysis</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          Ranked top product categories by total revenue; identified Beverages and Meat as dominant revenue drivers
+        </td>
       </tr>
       <tr style="border-bottom: 1px solid #ccc;">
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Sales Attribution</td>
-        <td style="padding: 14px 14px 14px 19px;">Compared in-store vs web purchases across age groups using calculated share-of-total measures</td>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Household Comparison</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          Compared spending levels by household type, highlighting disproportionate revenue contribution from child-free customers
+        </td>
       </tr>
       <tr>
-        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Dashboard Insights</td>
-        <td style="padding: 14px 14px 14px 19px;">Created interactive charts to highlight retention rates, campaign response status, and revenue drivers</td>
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Marketing Impact</td>
+        <td style="padding: 14px 14px 14px 19px;">
+          Grouped campaigns by channel to compare deal conversion; revealed social media’s dominance in campaign performance
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+
 
 <h2>Key Insights</h2>
 
@@ -586,8 +597,8 @@
 <!-- SECTION 2 -->
 <h3 class="insight-subtitle">Purchase Activity by Age Group</h3>
 <ul>
-  <li><strong>Established Professionals (45–54)</strong> showed the highest purchase activity</li>
-  <li>Closely followed by <strong>those nearing retirement</strong> (55–64) and <strong>Retirees</strong> (65–74)</li>
+  <li><strong>Established Professionals</strong> (45–54) showed the highest purchase activity</li>
+  <li>Closely followed by those <strong>Nearing Retirement</strong> (55–64) and <strong>Retirees</strong> (65–74)</li>
 </ul>
 <div style="text-align: center; margin: 20px 0;">
   <img src="purchase_by_age.png" alt="Purchase by Age Group Chart" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
@@ -608,43 +619,33 @@
 
 <!-- Marketing Effectiveness Section for 2Market Project -->
 
-<h3 class="insight-subtitle">Marketing Effectiveness</h3>
-<p>Initial assumptions pointed to bulkmail and brochure as strong marketing channels. However, deeper analysis showed a different reality — social media platforms dominated in deal conversions, both individually and collectively.</p>
+<h2>Marketing Effectiveness</h2>
+<p>Initial assumptions pointed to bulkmail and brochure as strong marketing channels. However, deeper analysis showed a different reality. Social media platforms dominated in deal conversions, both individually and collectively.</p>
 
-<h4 class="insight-subtitle">1. Social Platforms Drove 90% of Deals</h4>
+<h4 class="insight-subtitle">Social Platforms Drove 90% of Deals</h4>
 <p>When grouped together, Instagram, Facebook, and Twitter campaigns generated <strong>over 90% of total deals</strong>. Traditional channels, by contrast, delivered only a fraction of that performance.</p>
 <div style="text-align: center; margin: 20px 0;">
   <img src="social_media_impact.png" alt="Social vs Traditional Marketing Chart" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
   <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Social platforms converted 9x more deals than traditional methods.</em></p>
 </div>
 
-<h4 class="insight-subtitle">2. Bulkmail Leads Individually — But Social Wins Collectively</h4>
+<h4 class="insight-subtitle">Bulkmail Leads Individually, but Social Wins Collectively</h4>
 <p>Among individual channels, <strong>Bulkmail generated the highest deal volume</strong>. Yet the combined impact of social media channels far outweighed it. Instagram and Twitter followed closely behind, leaving brochures as the lowest performer.</p>
 <div style="text-align: center; margin: 20px 0;">
   <img src="deals_by_channel.png" alt="Deals by Channel" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
   <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Bulkmail is strong on its own, but social platforms dominate overall.</em></p>
 </div>
 
-<h4 class="insight-subtitle">3. Instagram Drove Alcohol Campaign Conversions</h4>
+<h4 class="insight-subtitle">Instagram Drove Alcohol Campaign Conversions</h4>
 <p><strong>Instagram stood out</strong> for its performance in alcohol-related campaigns. Though overall deal conversion rates remained below 1%, it consistently delivered stronger engagement in that category.</p>
 <div style="text-align: center; margin: 20px 0;">
   <img src="ig_alc_sales.png" alt="Instagram Alcohol Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
   <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Instagram led alcohol deal conversions with relatively higher success rates.</em></p>
 </div>
 
-<h4 class="insight-subtitle">4. Facebook Reached Older, High-Value Users</h4>
-<p>Facebook campaigns showed the widest reach across customer segments — especially among customers aged 55+ in countries like Spain and South Africa. While not always the top converter, it played a key role in broader market coverage.</p>
-<div style="text-align: center; margin: 20px 0;">
-  <img src="face_perf.png" alt="Facebook Channel Performance" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Facebook had the widest reach, especially in older demographics.</em></p>
-</div>
-
-<h4 class="insight-subtitle">5. Campaign Performance by Age Group</h4>
+<h4 class="insight-subtitle">Campaign Performance by Age Group</h4>
 <p>Instagram and Facebook consistently engaged a broad mix of customer segments.</p>
-<div style="text-align: center; margin: 20px 0;">
-  <img src="ig_perf.png" alt="Instagram Performance by Income" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Instagram campaigns were most effective for high-income, younger users.</em></p>
-</div>
+<div style="text-align: center; margin: 20px 0;"></div>
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="ad_channels.png" alt="Ad Performance by Channel" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
@@ -653,25 +654,109 @@
 
 <p><strong>Conclusion:</strong> While Bulkmail stood out individually, the data clearly supports a shift toward digital-first marketing. Social media platforms, led by Instagram and Facebook, drove stronger performance across all key metrics.</p>
 
+<section id="purchase-trends" class="py-10 px-6">
+  <h2 class="text-2xl font-bold mb-4">Product & Purchase Trends</h2>
+  
+  <ul class="list-disc list-inside space-y-2 mb-6">
+    <li><strong>In-store</strong> purchases still <strong>dominate</strong> across all age groups, especially among older, high-spending shoppers</li>
+    <li><strong>Web shopping is on the rise</strong>, but it’s not yet the preferred channel for higher-value purchases</li>
+    <li>Most revenue is driven by just two product categories: <strong>Beverages</strong> and <strong>Meat</strong></li>
+  </ul>
 
-<h4>🛍️ Product & Purchase Trends</h4>
-<ul>
-  <li>Liquor and Meat made up over 70% of revenue in most countries, led by Spain and South Africa</li>
-  <li>Web purchases are growing, but <strong>in-store shopping still dominates</strong> among higher spenders</li>
-  <li>Customers without children showed stronger loyalty and higher transaction frequency</li>
-</ul>
+  <div class="bg-violet-100 dark:bg-violet-900/30 border-l-4 border-violet-500 p-4 mb-6">
+    <p><strong>Insight:</strong> Despite digital growth, traditional in-store shopping remains key to revenue, especially among more affluent, older customers.</p>
+  </div>
 
-<div style="background-color: #e8f0ff; padding: 12px 18px; margin: 12px 0; border-left: 4px solid #6e44ff;">
-  <strong>Behavioural Trend:</strong> In-store shoppers from the "Established Professionals" segment drive the bulk of high-value purchases
+  <div style="text-align: center; margin: 20px 0;">
+  <img src="trend.png" alt="Product and Purchase Trend Chart" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: In-store dominates high-spender purchases, while web shopping is steadily growing. Beverages and Meat account for most of the revenue.</em></p>
+</div>
+</section>
+
+<section id="recommendations" class="py-12 px-6 md:px-20">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">Recommendations for 2Market</h2>
+
+  <div>
+  <h3 class="text-xl font-semibold">1. Prioritise In-Store Experience for High-Spending Demographics</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    In-store purchases dominate among older age groups (45–74), who are also the highest spenders.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Invest in targeted in-store promotions (e.g. loyalty cards, senior discount days).</li>
+    <li>Train staff to upsell during peak shopping hours.</li>
+  </ul>
 </div>
 
+<div>
+  <h3 class="text-xl font-semibold">2. Strengthen Digital Shopping Experience for Younger Segments</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    Web purchases are steadily growing among younger customers (18–34), though they spend less per transaction.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Improve mobile UX and checkout simplicity.</li>
+    <li>Introduce app-exclusive deals or snack/meat bundles.</li>
+    <li>Retarget cart abandoners with social media ads.</li>
+  </ul>
+</div>
 
-    <h2>Conclusion</h2>
-    <p>
-      The project uncovered meaningful trends in missed appointments and regional resource disparities. These insights
-      informed recommendations for strategic planning, service delivery improvements, and evidence-based staffing decisions.
-    </p>
-    </section>
+<div>
+  <h3 class="text-xl font-semibold">3. Double Down on High-Margin Categories: Beverages & Meat</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    These two categories drive most of the revenue across both web and in-store channels.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Feature them prominently in promotions.</li>
+    <li>Bundle products (e.g. wine & steak).</li>
+    <li>Upsell premium lines to higher-income customers.</li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">4. Segment Campaigns by Household Type</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    Child-free customers spend 2–4x more, especially on alcohol and meat.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Use Instagram and Facebook to target this group with lifestyle-based ads.</li>
+    <li>Launch geo-segmented campaigns in urban zones.</li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">5. Adopt Channel-Specific Campaign Strategy</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    Social platforms collectively outperform all others, converting over 90% of deals.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Prioritise digital ad budgets on Instagram and Facebook.</li>
+    <li>Use Bulkmail for follow-ups with personalised coupons.</li>
+    <li>Phase out underperforming traditional channels like brochures.</li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">6. Tailor Product Promotions by Age Group</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    Older customers prefer in-store and high-value products; younger ones lean towards convenience and variety.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Promote large-pack meat/beverage deals to older customers.</li>
+    <li>Offer sample boxes online for younger users.</li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="text-xl font-semibold">7. Monitor and Revisit Spending Tier Definitions</h3>
+  <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #8a4dff; border-radius: 6px; margin-top: 8px; margin-bottom: 12px; color: var(--text);">
+    Purchasing behaviour varies significantly by age, channel, and household type.
+  </div>
+  <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+    <li>Define Spending Tiers using transaction value + frequency.</li>
+    <li>Use these tiers for tailored marketing, such as exclusive early access offers.</li>
+  </ul>
+</div>
+  </div>
+</section>
 </div>
 </main>
   <footer>
