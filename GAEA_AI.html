@@ -421,6 +421,7 @@
   <div style="width: 1px; height: 20px; background-color: #555;"></div> <!-- Thin vertical line -->
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Python</span>
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Tableau</span>
+  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Excel</span>
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">View Code on GitHub</span>
    <a href="https://public.tableau.com/app/profile/aretas.petronis/viz/GAEAAIIceDemandForecasting/Dashboard" target="_blank" style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight); text-decoration: none;">
    View Dashboard on Tableau
@@ -493,17 +494,17 @@
   <li>Peak sales consistently aligned with <strong>weekends</strong>, especially <strong>Saturdays</strong> during heatwaves.</li>
   <div style="text-align: center; margin: 20px 0;">
   <img src="weekend_sales.png" alt="Weekend Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: shows how weekends had the biggest sales traffic.</em></p>
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Weekend peaks in sales, with Saturdays during heatwaves driving the highest volume.</em></p>
 </div>
   <li>Sales were highest in <strong>July, followed by June and August</strong>. Week-level spikes often matched <strong>heatwave periods</strong>.</li>
   <div style="text-align: center; margin: 20px 0;">
   <img src="year_on_year_sales.png" alt="Year on Year Sales" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: shows best performing months.</em></p>
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Sales volumes spiked in July, followed by June and August, mirroring seasonal temperature highs.</em></p>
 </div>
   <li>2022 weekly average temperature was <strong>1.5°C higher</strong> than 2021 (16.8°C vs 15.3°C), correlating with surging demand.</li>
 <div style="text-align: center; margin: 20px 0;">
   <img src="temp_yoy.png" alt="Temperature Comparison" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Weekly average temperature 2021 vs 2022 </em></p>
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: 2022 was 1.5°C warmer than 2021 on average — a key factor behind rising demand.</em></p>
 </div>
   <li><strong>Northwest Madrid</strong> emerged as the most ice-hungry zone, with the highest-performing stations.</li>
 </ul>
@@ -514,7 +515,7 @@
 
 <div style="text-align: center; margin: 20px 0;">
   <img src="22_heatwave.png" alt="Major Heatwave 2022" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Sales during heatwave in 2022 - same areas best performing.</em></p>
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: In 2022, Northwest stations once again dominated sales during heatwaves.</em></p>
 </div>
 
 <h2>Predictive Modelling</h2>
@@ -522,12 +523,12 @@
   <li>Built a Multiple Linear Regression model using 2022 weekly data to reduce noise and align with delivery cycles.</li>
   <div style="text-align: center; margin: 20px 0;">
   <img src="linear.png" alt="Linear Regression" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Average Sales per Petrol Station (Predicted vs Actual)</em></p>
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Predicted vs actual sales — the model captured seasonality and heat-driven surges with high accuracy.</em></p>
 </div>
   <li><strong>Key predictors:</strong> average max temp, station direction, weekend heat flags, public holidays/festivals, and 2-week sales lag.</li>
   <div style="text-align: center; margin: 20px 0;">
   <img src="key_drivers.png" alt="Key Drivers" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Average Weekly Impact per Petrol Station: Key Sales Drivers</em></p>
+  <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Hot weekends, public holidays and Northwest were the strongest predictors of demand.</em></p>
 </div>
   <li>Model explained <strong>70% of variation</strong> in sales. Residuals increased for high-volume stations, suggesting unmet demand.</li>
 </ul>
@@ -571,7 +572,7 @@
 
 <!-- Suggestion: Include comparison bar chart: baseline vs premium model revenue -->
 
-<h2>Recommendations</h2>
+<h2>Recommendations for GAEA_AI</h2>
 
 <div>
   <h3 class="text-xl font-semibold">1. Trigger-Based Restocking</h3>

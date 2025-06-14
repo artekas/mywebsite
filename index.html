@@ -392,16 +392,15 @@ body.dark-mode .hero-heading {
   color: white !important;
 }
 
-.hero::before {
+.hero:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(216, 197, 255, 0.4); 
+  background: none;
   z-index: 0;
-  transition: background 0.3s ease;
 }
 
 body.dark-mode .hero::before {
@@ -409,10 +408,19 @@ body.dark-mode .hero::before {
 }
 .hero-subtitle {
   font-weight: 500;
-  color: black !important;
+  font-size: 18px;
+  color: #111 !important;
+  background: rgba(255, 255, 255, 0.08); /* ← ultra translucent */
+  padding: 10px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px); /* ← stronger blur */
+  -webkit-backdrop-filter: blur(8px);
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* optional soft shadow */
 }
 body.dark-mode .hero-subtitle {
-  color: white !important;
+  color: #eee !important;
+  background: rgba(0, 0, 0, 0.2);
 }
 .tool-logo.power-bi {
   color: black !important;
@@ -436,6 +444,9 @@ body.dark-mode .tool-card i.power-bi {
 body.dark-mode .powerbi-icon {
   color: white;
 }
+.hero-heading:last-of-type {
+  margin-bottom: 27px;
+}
   </style>
 </head>
 <body>
@@ -458,7 +469,7 @@ body.dark-mode .powerbi-icon {
     <h1 class="hero-heading">Hello!</h1>
     <h1 class="hero-heading">I'm Aretas Petronis</h1>
     <p id="mainSubtitle" class="hero-subtitle">
-      LSE-certified to turn "Huh?" into "Hell yes!"
+      LSE-certified to turn <strong>"Huh?"</strong> into <strong>"Hell yes!"</strong>
     </p>
     <div class="hero-buttons">
       <a href="#" onclick="scrollToTools(event)">Tools</a>
@@ -532,9 +543,9 @@ body.dark-mode .powerbi-icon {
       <div class="project-card">
       <img src="project_3.JPG" alt="Turtle Games">
       <div class="project-tags">
-      <span class="project-tag">Python & Tableau</span>
+      <span class="project-tag">Python & R</span>
       </div>
-      <p>Turtle Games: Customer Segmentation</p>
+      <p>Turtle Games: Customer Loyalty Analysis</p>
       </div>
       </a>
 
