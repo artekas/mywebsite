@@ -411,7 +411,6 @@
   <p style="margin: 0; font-size: 16px;">LSE Project</p>
   <div style="width: 1px; height: 20px; background-color: #555;"></div> <!-- Thin vertical line -->
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Python</span>
-  <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">Tableau</span>
   <span style="background-color: #b695ff; color: white; padding: 6px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; border: 1px solid var(--highlight);">View Code on GitHub</span>
 </div>
 </div>
@@ -437,7 +436,7 @@
     </ul>
 
     <h2>Analytical Approach</h2>
-    <div style="overflow-x: auto; margin-top: 20px;">
+   <div style="overflow-x: auto; margin-top: 20px;">
   <table style="width: 100%; border-collapse: collapse; background: var(--card); color: var(--text); font-size: 15px; border: 1px solid #ccc;">
     <thead style="background-color: var(--accent);">
       <tr style="text-align: left; border-bottom: 2px solid var(--highlight);">
@@ -478,10 +477,84 @@
           </ul>
         </td>
       </tr>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Technical Stack & Methods</td>
+        <td style="padding: 12px;">
+          <ul style="padding-left: 20px; margin: 0;">
+            <li>Python (<strong>Pandas, Seaborn, Matplotlib</strong>) for data manipulation and visualisation</li>
+            <li>User-defined functions for reusable location and metric analysis</li>
+            <li>Feature engineering for time fields and duration categorisation</li>
+            <li><strong>TextBlob</strong> for Twitter sentiment analysis</li>
+            <li>Handled memory constraints by analysing datasets independently</li>
+          </ul>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
 
+
+<h2>Key Patterns and Insights</h2>
+<p>
+The analysis uncovered nuanced patterns across appointment types, regions, and booking behaviours:
+</p>
+<ul>
+  <li><strong>Appointment Volatility:</strong> Rather than following a stable seasonal cycle, appointment volumes showed sharp peaks and drops, suggesting reactive
+   shifts potentially driven by policy changes, staff shortages, or post-COVID backlogs.</li>
+   <img src="volatility.png" alt="Appointment Volatility"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: NHS appointment volatility over time.</em></p>
+  <li><strong>Capacity Gaps:</strong> NHS appointment numbers remained consistently below planning targets, suggesting chronic underutilisation of capacity.</li>
+    <img src="planning.png" alt="Appointments vs Planning"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: NHS capacity vs actual appointments.</em></p>
+  <li><strong>Mode of Booking Impacts Attendance:</strong> Telephone appointments had the highest attendance, while face-to-face saw the most missed appointments.</li>
+  <img src="attendance.png" alt="Attendance"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: How appointment attendance relates to appointment mode.</em></p>
+  <li><strong>Regional Variation:</strong> Some ICBs like NHS NW London had higher usage of online/video bookings, revealing successful digital integration.</li>
+  <img src="nw.png" alt="Top 5 Loactions by Appointment Mode"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Top 4 locations by appointment mode.</em></p>
+  <li><strong>Data Quality Patterns:</strong> “Unknown / Data Quality” entries decreased in areas with more appointments, suggesting correlation between high volumes and stronger data practices.</li>
+  <img src="unknown.png" alt="Data Quality"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Proportion of Unknown Data vs Total Appointments (%).</em></p>
+</ul>
+
+<h2>Twitter Engagement & Sentiment</h2>
+<p>
+A complementary sentiment analysis of 1,174 NHS-related tweets revealed the emotional tone and engagement landscape around appointments:
+</p>
+<ul>
+  <li><strong>#Healthcare</strong> dominated hashtags, followed by #NHS and #appointments.</li>
+  <img src="hashtag.png" alt="Hashtags"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Hashtags with count more than 10.</em></p>
+  <li>After cleaning duplicates, only 969 unique tweets remained, ensuring authentic sentiment trends.</li>
+  <li>Public sentiment leaned slightly positive overall but highlighted frustrations around wait times and access barriers.</li>
+  <img src="sentiment_nhs.png" alt="Sentiment"
+         style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Twitter sentiment analysis.</em></p>
+</ul>
+
+<h2>Recommendations</h2>
+<div style="background: rgba(138, 77, 255, 0.07); padding: 16px; border-left: 4px solid var(--highlight); margin-top: 12px;">
+  <ul>
+    <li><strong>Targeted reminders</strong> for face-to-face appointments to reduce no-show rates.</li>
+    <li><strong>Expand digital booking options</strong> such as video and online, especially in low-uptake regions.</li>
+    <li><strong>Adjust capacity forecasts</strong> to better reflect actual historical trends and utilisation rates.</li>
+    <li><strong>Improve data reporting standards</strong> to reduce “Unknown” classifications and enhance analytics readiness.</li>
+    <li><strong>Monitor sentiment signals</strong> from social media to anticipate public pain points or communication gaps.</li>
+  </ul>
+</div>
 
     <h2>Conclusion</h2>
     <p>
