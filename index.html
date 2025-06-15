@@ -139,7 +139,7 @@
     bottom: -4px;
    }
     .hero {
-      height: 100vh;
+      height: 110vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -376,16 +376,16 @@
       background-color: #5838d7;
     }
   .hero {
-  background-image: url('home.jpg');
-  background-size: 100%; /* Zoom in more */
-  background-position: center 30%; /* Shift upward */
+  background-image: url('home.png');
+  background-size: cover;
+  background-position: center 40%;  /* adjust from 'bottom' to 55% */
   background-repeat: no-repeat;
   background-color: var(--bg-1);
   color: var(--text);
-}
+  }
 
 body.dark-mode .hero {
-  background-image: url('home.jpg'); /* Optional: replace with a dark image if you have one */
+  background-image: url('home.png'); /* Optional: replace with a dark image if you have one */
   background-color: var(--bg-1);
 }
 body.dark-mode .hero-heading {
@@ -405,22 +405,6 @@ body.dark-mode .hero-heading {
 
 body.dark-mode .hero::before {
   background: rgba(0, 0, 0, 0.4); /* Adjust opacity to your taste */
-}
-.hero-subtitle {
-  font-weight: 500;
-  font-size: 18px;
-  color: #111 !important;
-  background: rgba(255, 255, 255, 0.08); /* ← ultra translucent */
-  padding: 10px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(8px); /* ← stronger blur */
-  -webkit-backdrop-filter: blur(8px);
-  margin-top: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* optional soft shadow */
-}
-body.dark-mode .hero-subtitle {
-  color: #eee !important;
-  background: rgba(0, 0, 0, 0.2);
 }
 .tool-logo.power-bi {
   color: black !important;
@@ -446,6 +430,12 @@ body.dark-mode .powerbi-icon {
 }
 .hero-heading:last-of-type {
   margin-bottom: 27px;
+}
+.hero-subtitle {
+  color: black !important;
+}
+body.dark-mode .hero-subtitle {
+  color: white !important;
 }
   </style>
 </head>
@@ -628,14 +618,14 @@ body.dark-mode .powerbi-icon {
 </script>
 <script>
   function scrollToTools(event) {
-  if (event) event.preventDefault();
-  const section = document.getElementById('tools');
-  const elementTop = section.getBoundingClientRect().top + window.scrollY;
-  const elementHeight = section.offsetHeight;
-  const viewportHeight = window.innerHeight;
-  const scrollTo = elementTop - ((viewportHeight - elementHeight) / 2);
-  window.scrollTo({ top: scrollTo, behavior: 'smooth' });
-}
+    if (event) event.preventDefault();
+    const section = document.getElementById('tools');
+    const rect = section.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+    const middleOffset = rect.top + scrollY - (window.innerHeight / 2) + (rect.height / 2) - 50;
+    
+    window.scrollTo({ top: middleOffset, behavior: 'smooth' });
+  }
 </script>
 </script>
 <script>
