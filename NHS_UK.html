@@ -292,7 +292,7 @@
       background: #5838d7;
     }
     .section-bg {
-     padding: 100px 20px;
+     padding: 100px 20px 120px;
      }
      .section-hero {
       background-color: var(--bg-1);
@@ -324,11 +324,10 @@
     }
 
     h2 {
-     color: var(--highlight);
      font-size: 22px;
      font-weight: 600;
-     margin-top: 50px;
-     margin-bottom: 12px;
+     margin-top: 70px;
+     margin-bottom: 20px;
     }
 
      p, ul li {
@@ -383,6 +382,12 @@
     #scrollTopBtn:hover {
       background-color: #5838d7;
     }
+    p + h2 {
+      margin-top: 30px;
+    }
+    ul + h2 {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -421,9 +426,10 @@
   <section class="section-bg section-projects" style="padding: 10px 0;">
     <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
     <h2>Project Context</h2>
-    <p>
-      With growing service demands and mounting pressure to improve efficiency, the NHS must continuously adapt its infrastructure and resource planning. 
-      Missed GP appointments alone cost millions annually, presenting a clear opportunity for data-driven intervention.
+    <p>With growing service demands and mounting pressure to improve efficiency, the NHS must continuously adapt its infrastructure and resource planning. 
+       Missed GP appointments alone cost millions annually. However, this data analysis revealed that post-COVID booking behaviours, staff shortages, and inconsistent
+       data entry practices significantly shaped NHS appointment dynamics. Poor data quality in certain regions also hindered insight generation, highlighting the need
+      for improved collection, entry, and tracking systems.
     </p>
 
     <h2>Objectives</h2>
@@ -488,6 +494,16 @@
             <li>Handled memory constraints by analysing datasets independently</li>
           </ul>
         </td>
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="padding: 12px; font-weight: 600; vertical-align: top; border-right: 1px solid #ccc;">Data Quality Focus</td>
+        <td style="padding: 12px;">
+          <ul style="padding-left: 20px; margin: 0;">
+            <li>Flagged regions with >10% “Unknown” appointment data for further review</li>
+            <li>Highlighted Staffordshire & Stoke-on-Trent for a 5% drop in missing data over 2 months</li>
+           <li>Suggested replication of improvements in regions with low data quality (e.g., Cheshire & Merseyside)</li>
+          </ul>
+        </td>
+       </tr>
       </tr>
     </tbody>
   </table>
@@ -510,7 +526,8 @@ The analysis uncovered nuanced patterns across appointment types, regions, and b
          style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
          box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: NHS capacity vs actual appointments.</em></p>
-  <li><strong>Mode of Booking Impacts Attendance:</strong> Telephone appointments had the highest attendance, while face-to-face saw the most missed appointments.</li>
+  <li><strong>Mode of Booking Impacts Attendance:</strong> Although face-to-face appointments had the highest total number of attendees, they also recorded the most missed appointments.
+    In contrast, telephone bookings had significantly lower no-show rates, indicating higher reliability per appointment.</li>
   <img src="attendance.png" alt="Attendance"
          style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
          box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
@@ -520,7 +537,8 @@ The analysis uncovered nuanced patterns across appointment types, regions, and b
          style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
          box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Top 4 locations by appointment mode.</em></p>
-  <li><strong>Data Quality Patterns:</strong> “Unknown / Data Quality” entries decreased in areas with more appointments, suggesting correlation between high volumes and stronger data practices.</li>
+  <li><strong>Data Quality Patterns:</strong> “Unknown / Data Quality” entries decreased in areas with more appointments, suggesting correlation between high volumes and stronger 
+    data practices.</li>
   <img src="unknown.png" alt="Data Quality"
          style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
          box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
@@ -543,24 +561,43 @@ A complementary sentiment analysis of 1,174 NHS-related tweets revealed the emot
          style="width: 100%; height: auto; object-fit: contain; border: 1px solid #ccc; border-radius: 8px;
          box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <p style="font-size: 14px; color: var(--text); margin-top: 8px;"><em>Chart: Twitter sentiment analysis.</em></p>
+  <li>Positive sentiment around NHS services suggests that better promotion of underused channels, such as online/video appointments, could increase patient uptake and reduce
+     missed appointments.</li>
 </ul>
 
 <h2>Recommendations</h2>
+
+<p>
+  While service utilisation was uneven across methods and regions, the deeper issue appeared to be data governance. 
+  Many of the missed insights stemmed from inconsistent reporting, suggesting that staff training and systemic support are as vital as capacity planning or digital adoption.
+</p>
+
 <div style="background: rgba(138, 77, 255, 0.07); padding: 16px; border-left: 4px solid var(--highlight); margin-top: 12px;">
   <ul>
-    <li><strong>Targeted reminders</strong> for face-to-face appointments to reduce no-show rates.</li>
-    <li><strong>Expand digital booking options</strong> such as video and online, especially in low-uptake regions.</li>
-    <li><strong>Adjust capacity forecasts</strong> to better reflect actual historical trends and utilisation rates.</li>
-    <li><strong>Improve data reporting standards</strong> to reduce “Unknown” classifications and enhance analytics readiness.</li>
-    <li><strong>Monitor sentiment signals</strong> from social media to anticipate public pain points or communication gaps.</li>
+    <li><strong>Implement targeted SMS/email reminders</strong> for face-to-face bookings, where DNA rates are highest. This low-cost step can improve attendance and resource efficiency.</li>
+    
+    <li><strong>Launch regional awareness campaigns</strong> to boost adoption of video and online appointments, especially in areas showing low uptake. NHS NW London’s success can serve as a template.</li>
+    
+    <li><strong>Standardise appointment entry protocols</strong> across ICBs to reduce “Unknown” classifications. Tie data quality KPIs to staff performance or incentive schemes.</li>
+    
+    <li><strong>Recalibrate NHS planning forecasts</strong> based on rolling averages and post-pandemic shifts. This would avoid overbudgeting for unused capacity.</li>
+    
+    <li><strong>Establish continuous social listening tools</strong> using Twitter sentiment signals to detect emerging public frustrations or unmet needs in near real-time.</li>
   </ul>
 </div>
 
+
     <h2>Conclusion</h2>
-    <p>
-      The project uncovered meaningful trends in missed appointments and regional resource disparities. These insights
-      informed recommendations for strategic planning, service delivery improvements, and evidence-based staffing decisions.
-    </p>
+<p>
+This analysis went beyond simple appointment counts to uncover deeper structural issues within the NHS, from inconsistent data entry and underused digital services to misaligned
+capacity planning. While the number of missed appointments is frequently cited in the media, this project reveals that the real challenge lies in uneven service utilisation and 
+fragmented information systems.
+</p>
+<p>
+By combining structured datasets with public sentiment analysis, I managed to build a clearer picture of both operational pain points and public-facing perceptions.
+The findings suggest that smarter communication, better data discipline, and demand-aligned resource planning could unlock significant efficiency gains across the NHS.
+</p>
+<p style="margin-bottom: 50px;"></p>
     </section>
 </div>
 </main>

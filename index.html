@@ -139,16 +139,23 @@
     bottom: -4px;
    }
     .hero {
-      height: 110vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      margin-top: 20px;
-      position: relative;
-      z-index: 1;
-    }
+  height: 110vh;
+  width: 100vw;
+  background-image: url('home.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff6e9;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
     .hero h1, .hero p, .section-title {
       transition: opacity 0.25s ease-out;
       will-change: opacity;
@@ -375,17 +382,9 @@
     #scrollTopBtn:hover {
       background-color: #5838d7;
     }
-  .hero {
-  background-image: url('home.png');
-  background-size: cover;
-  background-position: center 40%;  /* adjust from 'bottom' to 55% */
-  background-repeat: no-repeat;
-  background-color: var(--bg-1);
-  color: var(--text);
-  }
 
 body.dark-mode .hero {
-  background-image: url('home.png'); /* Optional: replace with a dark image if you have one */
+  background-image: url('home.png');
   background-color: var(--bg-1);
 }
 body.dark-mode .hero-heading {
@@ -437,6 +436,7 @@ body.dark-mode .powerbi-icon {
 body.dark-mode .hero-subtitle {
   color: white !important;
 }
+
   </style>
 </head>
 <body>
@@ -455,7 +455,7 @@ body.dark-mode .hero-subtitle {
     <a href="#contact" id="contact-link">Contact</a>
   </header>
   <div class="hero" id="top">
-  <div style="position: relative; z-index: 2; margin-top: 40px;">
+  <div style="z-index: 2;">
     <h1 class="hero-heading">Hello!</h1>
     <h1 class="hero-heading">I'm Aretas Petronis</h1>
     <p id="mainSubtitle" class="hero-subtitle">
