@@ -438,14 +438,19 @@ body.dark-mode .hero-subtitle {
 }
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    padding-top: 140px; /* slightly less padding */
-    padding-bottom: 200px;
-    background-size: 90%;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-image: none; /* optionally hide image on mobile */
-  }
+  min-height: 100vh;
+  padding: 60px 20px 100px;
+  background-size: 90%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
   .hero h1 {
     font-size: 26px;
@@ -470,6 +475,19 @@ body.dark-mode .hero-subtitle {
     max-width: 220px;
     font-size: 14px;
     padding: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .tools-grid {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    gap: 24px !important;
+    max-width: 100%;
+  }
+
+  .tool-card {
+    margin: 0 auto;
   }
 }
   </style>
