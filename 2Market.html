@@ -383,23 +383,41 @@
     #scrollTopBtn:hover {
       background-color: #5838d7;
     }
+    .section-subtitle {
+      margin-top: 40px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
     ol li {
       margin-bottom: 16px;
     }
-    .section-subtitle {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text);
-      margin-top: 20px;
-      margin-bottom: 12px;
-    }
-    .insight-subtitle {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--text);
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
+    @media (max-width: 768px) {
+  .project-header-wrapper {
+    padding-top: 20px !important;
+    height: auto !important;
+  }
+  .project-title {
+    font-size: 24px !important;
+    text-align: center;
+  }
+  .project-header-wrapper div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-header-wrapper span,
+  .project-header-wrapper a {
+    margin-top: 10px;
+    font-size: 13px !important;
+    padding: 5px 10px !important;
+  }
+  main h1 {
+    font-size: 26px !important;
+  }
+  p, ul li {
+    font-size: 15px;
+  }
+}
   </style>
 </head>
 <body>

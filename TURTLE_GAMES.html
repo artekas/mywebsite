@@ -383,28 +383,42 @@
     #scrollTopBtn:hover {
       background-color: #5838d7;
     }
-    main section .content-wrapper {
-      padding-left: 20px;
-      padding-right: 20px;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 900px;
+    .section-subtitle {
+      margin-top: 40px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      font-weight: 600;
     }
-    .image-block {
-      text-align: center;
-      margin: 20px 0;
+    ol li {
+      margin-bottom: 16px;
     }
-    .image-block img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    .image-block p {
-      font-size: 14px;
-      color: var(--text);
-      margin-top: 8px;
-    }
+    @media (max-width: 768px) {
+  .project-header-wrapper {
+    padding-top: 20px !important;
+    height: auto !important;
+  }
+  .project-title {
+    font-size: 24px !important;
+    text-align: center;
+  }
+  .project-header-wrapper div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-header-wrapper span,
+  .project-header-wrapper a {
+    margin-top: 10px;
+    font-size: 13px !important;
+    padding: 5px 10px !important;
+  }
+  main h1 {
+    font-size: 26px !important;
+  }
+  p, ul li {
+    font-size: 15px;
+  }
+}
+
   </style>
 </head>
 <body>
