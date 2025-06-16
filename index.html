@@ -454,7 +454,40 @@ body.dark-mode .hero-subtitle {
     flex-direction: column;
   }
 }
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 220px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-size: 90%;
+    background-position: bottom center;
+  }
 
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px !important;
+    line-height: 1.5;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 14px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    max-width: 250px;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+}
   </style>
 </head>
 <body>
